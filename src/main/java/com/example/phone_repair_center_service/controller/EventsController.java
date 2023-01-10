@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class EventsController {
     private EventsService eventsService;
 
     @PostMapping("add")
-    public ResponseEntity<Events> saveEmployee(@RequestBody Events events){
+    public ResponseEntity<Events> saveEmployee(@Valid @RequestBody Events events){
         return new ResponseEntity<Events>(eventsService.saveEmployee(events), HttpStatus.CREATED);
     }
 
@@ -31,7 +32,7 @@ public class EventsController {
     }
 
     @PutMapping("update/{id}")
-    public ResponseEntity<Events> updateEvent(@PathVariable("id") long id, @RequestBody Events event){
+    public ResponseEntity<Events> updateEvent(@Valid @PathVariable("id") long id, @RequestBody Events event){
         return new ResponseEntity<Events>(eventsService.updateEvent(event, id), HttpStatus.OK);
     }
 
