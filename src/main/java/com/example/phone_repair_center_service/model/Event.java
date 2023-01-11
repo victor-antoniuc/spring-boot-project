@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
 @Setter
 @Entity
 @Table(name="table", schema="events")
-public class Events {
+public class Event {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
