@@ -17,7 +17,7 @@ public class EventController {
     private EventService eventService;
 
     @PostMapping("add")
-    public ResponseEntity<Event> saveEmployee(@Valid @RequestBody Event event){
+    public ResponseEntity<Event> saveEvent(@Valid @RequestBody Event event){
         return new ResponseEntity<Event>(eventService.saveEvent(event), HttpStatus.CREATED);
     }
 
