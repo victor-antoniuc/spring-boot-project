@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/events")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class EventController {
     private EventService eventService;
 
@@ -49,4 +50,6 @@ public class EventController {
 
         return new ResponseEntity<String>("All Events deleted successfully!.", HttpStatus.OK);
     }
+
+
 }
