@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 @Getter
@@ -15,10 +16,21 @@ public class Event {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    @Column(name="title")
+    @Column(name="firstName")
     @NotEmpty(message = "Title must not be empty")
-    private String title;
-    @Column(name="text")
-    @NotEmpty(message = "Text must not be empty")
-    private String text;
+    private String firstName;
+    @Column(name="lastName")
+    @NotEmpty(message = "Title must not be empty")
+    private String lastName;
+    @Column(name="phoneNumber")
+    @NotEmpty(message = "Title must not be empty")
+    private String phoneNumber;
+
+    @Column(name="phoneModel")
+    @NotEmpty(message = "Title must not be empty")
+    private String phoneModel;
+
+    @Column(name="description")
+    @NotEmpty(message = "Title must not be empty")
+    private String description;
 }

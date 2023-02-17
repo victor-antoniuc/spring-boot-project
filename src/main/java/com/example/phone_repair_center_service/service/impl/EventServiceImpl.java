@@ -32,8 +32,11 @@ public class EventServiceImpl implements EventService {
     public Event updateEvent(Event event, long id) {
         Event existingEvent = eventRepository.findById(id).orElseThrow(null);
 
-        existingEvent.setTitle(event.getTitle());
-        existingEvent.setText(event.getText());
+        existingEvent.setFirstName(event.getFirstName());
+        existingEvent.setLastName(event.getLastName());
+        existingEvent.setPhoneNumber(event.getPhoneNumber());
+        existingEvent.setPhoneModel(event.getPhoneModel());
+        existingEvent.setDescription(event.getDescription());
 
         eventRepository.save(existingEvent);
 
