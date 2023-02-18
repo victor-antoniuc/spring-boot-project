@@ -6,12 +6,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 
 @Getter
 @Setter
 @Entity
-@Table(name="table", schema="events")
+@Table(name="events", schema="public")
 public class Event {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
