@@ -24,7 +24,6 @@ public class Event {
     @NotEmpty(message = "Last Name must not be empty")
     private String lastName;
     @Column(name="phoneNumber")
-    @NotEmpty(message = "Phone Number must not be empty")
     private String phoneNumber;
 
     @Column(name="phoneModel")
